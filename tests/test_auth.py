@@ -1,7 +1,7 @@
 import pytest
+from tests.init_test import client, user_admin, application, auth_headers
 from api.models.user import UserModel
 from api.models.note import NoteModel
-from tests.init_test import client, user_admin, application, auth_headers
 
 
 def test_basic_auth(client, auth_headers, user_admin):

@@ -1,13 +1,11 @@
-from api import db, Config, ma
+from api import db, Config
 from passlib.apps import custom_app_context as pwd_context
-from itsdangerous import URLSafeTimedSerializer as Serializer
 from itsdangerous import URLSafeSerializer, BadSignature
 
 from sqlalchemy.exc import IntegrityError
 
 
 class UserModel(db.Model):
-    # __name = "User"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(32), unique=True)
     password_hash = db.Column(db.String(128))

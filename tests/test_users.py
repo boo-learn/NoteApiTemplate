@@ -1,6 +1,6 @@
 import pytest
-from api.models.user import UserModel
 from tests.init_test import client, application, auth_headers, user_admin
+from api.models.user import UserModel
 
 
 @pytest.fixture()

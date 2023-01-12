@@ -7,6 +7,8 @@ from flask_httpauth import HTTPBasicAuth, HTTPTokenAuth, MultiAuth
 
 app = Flask(__name__)
 app.config.from_object(Config)
+ctx = app.app_context()
+ctx.push()
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 ma = Marshmallow(app)
