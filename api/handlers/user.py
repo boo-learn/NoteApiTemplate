@@ -22,7 +22,8 @@ def get_users():
 def create_user():
     user_data = request.json
     user = UserModel(**user_data)
-    # TODO: добавить обработчик на создание пользователя с неуникальным username
+    # TODO: добавить обработчик на создание пользователя с неуникальным username.
+    #  При попытке создать пользователя с существующим именем, возвращаем ответ с кодом 400
     user.save()
     return user_schema.dump(user), 201
 

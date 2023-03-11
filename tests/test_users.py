@@ -41,9 +41,10 @@ def test_user_creation_already_exist(client, user):
     Тест на создание пользователя с существующим именем
     """
     # 1. Используя фикстуру user - создаем пользователя с "username": "testuser"
-    # 2. Отправляем put запрос на создание пользователя с таким же username
+    # 2. Отправляем POST запрос на создание пользователя с таким же username
     user_data = {"username": "testuser", "password": "1234"}
     response = client.post('/users', json=user_data, content_type='application/json')
+    # 3. Проверяем, что получили код ответа 400
     # TODO: допишите тест и запустите его, убрав декоратор @pytest.mark.skip
 
 
